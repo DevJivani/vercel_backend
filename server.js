@@ -46,6 +46,11 @@ app.use(express.json());
 // Serve uploaded files
 app.use('/uploads', express.static('uploads'));
 
+// Root route for testing
+app.get('/', (req, res) => {
+  res.json({ message: '🚀 Chat App Backend is running!' });
+});
+
 // Routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/rooms', require('./routes/rooms'));
